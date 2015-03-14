@@ -31,35 +31,35 @@ In order to add new functionality to your home automation server, you must do th
 
 1. Add a new python "endpoint" function that performs the task in HomeAutomationServer.py.
 
-```
-@app.route('/my_cool_automation_task')
-def my_cool_automation_task():
-    """Performs my cool home automation task"""
-    #INSERT CODE HERE
-    return jsonify(result="Cool task performed succesfully!")
-```
+  ```
+  @app.route('/my_cool_automation_task')
+  def my_cool_automation_task():
+      """Performs my cool home automation task"""
+      #INSERT CODE HERE
+      return jsonify(result="Cool task performed succesfully!")
+  ```
 
 2. Add a button to your webpage that corresponds to the new task in templates/index.html.
 
-```
-<button id="do_my_cool_automation_task">Do My Cool Automation Task</button>
-```
+  ```
+  <button id="do_my_cool_automation_task">Do My Cool Automation Task</button>
+  ```
 
 3. Write a Javascript function that calls your corresponding python "endpoint" and prints out
 the result to the html in index.html.
 
-```
-var doMyCoolAutomationTask = function(e) {
-  $.get($SCRIPT_ROOT + '/my_cool_automation_task', function(data) {
-    $('#result').text(data.result);
-  });
-};
-```
+  ```
+  var doMyCoolAutomationTask = function(e) {
+    $.get($SCRIPT_ROOT + '/my_cool_automation_task', function(data) {
+      $('#result').text(data.result);
+    });
+  };
+  ```
 
 4. Attach a "listener" to your button's "click" event that calls your new Javascript function.
 
-```
-$('button#do_my_cool_automation_task').bind('click', doMyCoolAutomationTask);
-```
+  ```
+  $('button#do_my_cool_automation_task').bind('click', doMyCoolAutomationTask);
+  ```
 
 5. Restart automation server and celebrate!
