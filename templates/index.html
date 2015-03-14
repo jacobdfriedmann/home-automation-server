@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+<script type="text/javascript">
+  // This javascript code calls your server method
+  // when a button is clicked.
+  $(function() {
+    var toggleGarageDoor = function(e) {
+      $.get($SCRIPT_ROOT + '/garage_door', function(data) {
+        $('#result').text(data.result);
+      });
+    };
+
+    var turnAcOn = function(e) {
+      $.get($SCRIPT_ROOT + '/ac_on', function(data) {
+        $('#result').text(data.result);
+      });
+    };
+
+    $('button#garage_door').bind('click', toggleGarageDoor);
+    $('button#ac_on').bind('click', turnAcOn);
+  });
+</script>
+<h1>401 Campton Place Home Automation</h1>
+<div id="result">Select an action</div>
+<br/>
+<button id="garage_door">Toggle Garage Door</button>
+<button id="ac_on">Turn AC On</button>
+{% endblock %}
