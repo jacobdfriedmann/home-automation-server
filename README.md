@@ -21,9 +21,9 @@ From the project's root directory:
 ## Usage
 
 1. Start the home automation server.
-	`python HomeAutomationServer.py`
+	`sudo python HomeAutomationServer.py`
 
-2. Visit the home automation server by navigation to http://localhost:5000 in your browser.
+2. Visit the home automation server by navigation to http://localhost in your browser.
 
 ## Development
 
@@ -45,8 +45,7 @@ In order to add new functionality to your home automation server, you must do th
   <button id="do_my_cool_automation_task">Do My Cool Automation Task</button>
   ```
 
-3. Write a Javascript function that calls your corresponding python "endpoint" and prints out
-the result to the html in index.html.
+3. Write a Javascript function that calls your corresponding python "endpoint" and prints out the result to the html in index.html.
 
   ```
   var doMyCoolAutomationTask = function(e) {
